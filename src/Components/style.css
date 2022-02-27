@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+::selection {
+  color: #ffff;
+  background: rgb(142, 73, 232);
+}
+body {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 1);
+}
+.containers {
+  margin: 30px auto 200px auto;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper {
+  background: #fff;
+  max-width: 400px;
+  width: 100%;
+  margin: 0px auto;
+  height: fit-content;
+  padding: 15px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+.todolist {
+  background: #fff;
+  max-width: 400px;
+  width: 100%;
+  border: none;
+  margin: 0px auto;
+  padding: 25px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.completedlist {
+  background: #fff;
+  max-width: 400px;
+  width: 100%;
+  margin: 0px auto;
+  height: fit-content;
+  padding: 25px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+.wrapper h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 0px;
+  color: #179477;
+}
+.wrapper .inputField {
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  height: 45px;
+  border-radius: 30px;
+}
+.error {
+  padding: 7px;
+  color: red;
+}
+.buttons {
+  width: 95px;
+  height: 100%;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  background: #e71655;
+  cursor: pointer;
+  border-radius: 30px;
+  opacity: 0.8;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.button {
+  height: 40px;
+  width: 250px;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  border: none;
+  color: rgb(24, 2, 2);
+  outline: none;
+  background: #eeff02;
+  cursor: pointer;
+  border-radius: 30px;
+  opacity: 0.8;
+}
+.lists {
+  margin: 20px 0;
+}
+.lists li {
+  position: relative;
+  list-style: none;
+  height: 45px;
+  line-height: 45px;
+  margin-bottom: 8px;
+  background: linear-gradient(to right, #8566da 20%, #0aa5ec 80%);
+
+  border-radius: 30px;
+  padding: 0 15px;
+  cursor: default;
+  overflow: hidden;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.completedlistelement h4 {
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+.completedlistelement li {
+  position: relative;
+  list-style: none;
+  height: 45px;
+  line-height: 45px;
+  margin-bottom: 8px;
+  background: linear-gradient(to right, #df68ea 20%, #e030ba 80%);
+  border-radius: 30px;
+  padding: 0 15px;
+  cursor: default;
+  overflow: hidden;
+  max-height: 250px;
+  overflow-y: auto;
+}
