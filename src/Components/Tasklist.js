@@ -1,48 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
+
 import { db } from "../firebase";
 import Taskform from "./Taskform";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import { Button } from "@material-ui/core";
 function Tasklist() {
-  const [open, setOpen] = React.useState(false);
-  
-  const handleClickToOpen = () => {
-    setOpen(true);
-  };
-  
-  const handleToClose = () => {
-    setOpen(false);
-  };
-  const handleclicked=()=>{
-    
-    for (let i = 0; i < arr.length; i++) {
-      db.collection("tasks").doc(arr[i].id).update({ isCompleted: true });
-      document.getElementsByClassName(`id${arr[i].id}`)[0].style.color =
-        "black";
-      document.getElementsByClassName(
-        `id${arr[i].id}`
-      )[0].style.textDecoration = "none";
-    }
-    
-    let l = tasks;
-    for (let i = 0; i < arr.length; i++) {
-      let index = l.findIndex((value) => value.id === arr[i].id);
-      setcompletedtasks([...completedtasks, tasks[index]]);
-      l.splice(index, 1);
-    }
-    
-    settasks(l);
-    
-    if (change) setchange(false);
-    else setchange(true);
-    console.log(change);
-    setOpen(false);
-
-  }
   const [tasks, settasks] = useState([]);
   const [change, setchange] = useState(false);
   const [showcompleted, setshowcompleted] = useState(false);
@@ -131,19 +92,17 @@ function Tasklist() {
         `id${arr[i].id}`
       )[0].style.textDecoration = "none";
     }
-    
     let l = tasks;
     for (let i = 0; i < arr.length; i++) {
       let index = l.findIndex((value) => value.id === arr[i].id);
       setcompletedtasks([...completedtasks, tasks[index]]);
       l.splice(index, 1);
     }
-    
+    console.log(l);
     settasks(l);
-    
+
     if (change) setchange(false);
     else setchange(true);
-    console.log();
   };
   return (
     <div className="containers">
@@ -161,25 +120,6 @@ function Tasklist() {
             >
               Remove Completed Task
             </Button>
-            <Dialog open={open} onClose={makeCompleted}>
-        <DialogTitle>{"choose an option"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Do you want to remove this taks?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-        <Button onClick={handleToClose} 
-                  color="primary" autoFocus>
-            NO
-          </Button>
-          <Button onClick={{makeCompleted}} 
-                  color="primary" autoFocus>
-            YES!
-          </Button>
-        </DialogActions>
-      </Dialog>
-
           </div>
         )}
       </div>
